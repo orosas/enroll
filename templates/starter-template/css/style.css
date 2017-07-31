@@ -30,3 +30,7 @@
 .esq_redonda {
 	border-radius: 30px;
 }
+
+.txt-bold {
+	font-weight: bold;
+}
