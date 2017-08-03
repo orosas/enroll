@@ -20,3 +20,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('modules.Enrollment.urls', namespace='Enrollment', app_name='Enrollment'), name="Enrollment"),
 ]
+
+# Cambia el Título en Django Admin
+admin.site.site_header = 'MasTec México Admin en URL main'

@@ -9,7 +9,7 @@ class Empresa(models.Model):
 	telefono = models.CharField(max_length=50, null=True, blank=True)
 	fecha_modif = models.DateField(auto_now=True)
 	fecha_creacion = models.DateField(auto_now_add=True)
-	autor = models.ForeignKey(User,related_name='eluser')
+	usuario = models.ForeignKey(User,related_name='eluser')
 
 	def __str__(self):
 		return u"%s" % (self.nombre)
@@ -20,13 +20,36 @@ class Empresa(models.Model):
 STATUS = (
 	('AC','Activo'),
 	('BJ','Baja'),
-	('BN','Baja Network'),
 	('BL','Bloqueado'),
-	('PE','Pendiente'),
-	('RE','Rechazado'),
-	('RS','Revisar Estatus'),
+	('PR','En Proceso'),
 	)
 
+STATUS_OPERACIONES = (
+	('OP','Operativo'),
+	('SP','En Espera De Asignación'),
+	)
+
+CARGO = (
+	('AD','Administrativo'),
+	('CO','Coordinador'),
+	('LI','Líder'),
+	('PM','PM'),
+	('SP','Supervisor'),
+	('TC','Técnico'),
+	)
+
+# Si se requiere que un campo almace varias opciones como choices
+# Se hace desde forms.py 
+'''
+<forms.py>
+
+class SomeForm(forms.Form):
+    CHOICES = (('a','a'),
+               ('b','b'),
+               ('c','c'),
+               ('d','d'),)
+    picked = forms.MultipleChoiceField(choices=CHOICES, widget=forms.CheckboxSelectMultiple())
+'''
 
 class Usuario(models.Model):
 	nombres = models.CharField(max_length=50, null=False, blank=False)
@@ -34,21 +57,28 @@ class Usuario(models.Model):
 	apellido_materno = models.CharField(max_length=50, null=False, blank=False)
 	empresa = models.ForeignKey(Empresa, related_name='laempresa')
 	status = models.CharField(choices=STATUS, max_length=2)
+	status_operaciones = models.CharField(choices=STATUS_OPERACIONES, max_length=2)
 	fecha_baja = models.DateField(null=True, blank=True)
+	observaciones = models.TextField(null=False, blank=False)
 	email = models.EmailField(max_length=100, null=False, blank=False)
 	telefono = models.CharField(max_length=200, null=False, blank=False)
 	num_imss = models.CharField(max_length=11, null=False, blank=False)
 	curp = models.CharField(max_length=18, null= False, blank=False)
 	direccion = models.TextField(null=False, blank=False)
+	cargo = models.CharField(choices=CARGO, max_length=2)
+	# Campo para guardar diversas actividades que ejecuta el usuario
+	# por ejemplo Civil Works, I&C, Decomisionamiento
+	actividades = models.TextField(null=False, blank=False)
+	fecha_liberado_ehs = models.DateField(null=True, blank=True)
 	u_fecha_modificacion = models.DateField(auto_now=True)
 	u_fecha_creacion = models.DateField(auto_now_add=True)
-	autor = models.ForeignKey(User,related_name='elusuario')
+	elusuario = models.ForeignKey(User, on_delete=models.CASCADE,)
 
 	def __str__(self):
 		return u"%s %s %s" % (self.nombres, self.apellido_paterno, self.apellido_materno)
 
 class Enroll(models.Model):
-	usuario = models.ForeignKey(Usuario, related_name='elenrollment')
+	usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE,)
 	acuse_att = models.PositiveIntegerField(null=True, blank=True)
 	enrollment_id = models.CharField(max_length=6, null=False, blank=False)
 	comentario = models.TextField(null=False, blank=False)
@@ -60,13 +90,28 @@ class Enroll(models.Model):
 		return u"%s" % (self.acuse_att)
 
 class Yasc(models.Model):
-	usuario = models.ForeignKey(Usuario, related_name='elenrollment2')
+	usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE,)
 	password = models.CharField(max_length=50, null=False, blank=False)
 	imei = models.CharField(max_length=17, null=True, blank=True)
-	email = models.CharField(max_length=50, null=False, blank=False)
+	pac_blu = models.DateField(null=True, blank=True)
+	email_pac_blu = models.CharField(max_length=60, null=False, blank=False)
 	comentario = models.TextField(null=False, blank=False)
 	fecha_modificacion = models.DateField(auto_now=True)
 	fecha_creacion = models.DateField(auto_now_add=True)
 
 	def __str__(self):
 		return u"%s" % (self.imei)
+
+class Epp(models.Model):
+	usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE,)
+	dc3_alturas = models.DateField(null=True, blank=True)
+	dc3_escaleras = models.DateField(null=True, blank=True)
+	dc3_riesgos_electricos = models.DateField(null=True, blank=True)
+	primeros_auxilios = models.DateField(null=True, blank=True)
+	certificado_medico = models.DateField(null=True, blank=True)
+	arnes = models.DateField(null=True, blank=True)
+	bandola = models.DateField(null=True, blank=True)
+	linea_vida = models.DateField(null=True, blank=True)
+
+	def __str__(self):
+		return u"%s" % (self.usuario)

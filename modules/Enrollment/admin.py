@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Usuario, Empresa, Enroll, Yasc
+from .models import Usuario, Empresa, Enroll, Yasc, Epp
 
 # Register your models here.
 
@@ -28,10 +28,18 @@ class EmpresaAdmin(admin.ModelAdmin):
 class EnrollAdmin(admin.ModelAdmin):
 	pass
 
+
 class YascAdmin(admin.ModelAdmin):
-	pass
+	# despliega todos éstos campos en el Admin, antes de ver detalles de cada registro
+	list_display = ('usuario','imei')
+
+
+class EppAdmin(admin.ModelAdmin):
+	# despliega todos éstos campos en el Admin, antes de ver detalles de cada registro
+	list_display = ('usuario', 'dc3_alturas')
 
 admin.site.register(Usuario, UsuarioAdmin)
 admin.site.register(Empresa, EmpresaAdmin)
 admin.site.register(Enroll, EnrollAdmin)
 admin.site.register(Yasc, YascAdmin)
+admin.site.register(Epp, EppAdmin)
