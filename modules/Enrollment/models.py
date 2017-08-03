@@ -7,6 +7,9 @@ class Empresa(models.Model):
 	contacto = models.CharField(max_length=50, null=True, blank=True)
 	email = models.EmailField(max_length=50, null=True, blank=True)
 	telefono = models.CharField(max_length=50, null=True, blank=True)
+	fecha_modif = models.DateField(auto_now=True)
+	fecha_creacion = models.DateField(auto_now_add=True)
+	autor = models.ForeignKey(User,related_name='eluser')
 
 	def __str__(self):
 		return u"%s" % (self.nombre)
@@ -33,7 +36,7 @@ class Usuario(models.Model):
 	status = models.CharField(choices=STATUS, max_length=2)
 	fecha_baja = models.DateField(null=True, blank=True)
 	email = models.EmailField(max_length=100, null=False, blank=False)
-	telefono = models.CharField(max_length=20, null=False, blank=False)
+	telefono = models.CharField(max_length=200, null=False, blank=False)
 	num_imss = models.CharField(max_length=11, null=False, blank=False)
 	curp = models.CharField(max_length=18, null= False, blank=False)
 	direccion = models.TextField(null=False, blank=False)

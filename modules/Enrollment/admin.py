@@ -4,10 +4,26 @@ from .models import Usuario, Empresa, Enroll, Yasc
 # Register your models here.
 
 class UsuarioAdmin(admin.ModelAdmin):
-	pass
+	search_fields = ('nombres', 'apellido_paterno')
+
+	# despliega todos éstos campos en el Admin, antes de ver detalles de cada registro
+	list_display = ('nombres', 'apellido_paterno', 'status', 'empresa',)
+
+	# agrega una barra del lado derecho para poder filtrar los resultados
+	list_filter = ('empresa', 'status',)
+
+
 
 class EmpresaAdmin(admin.ModelAdmin):
-	pass
+	# despliega todos éstos campos en el Admin, antes de ver detalles de cada registro
+	list_display = ('nombre', 'contacto')
+
+	# For search bar en la parte superior del admin
+	search_fields = ('nombre',)
+
+	# agrega una barra del lado derecho para poder filtrar los resultados
+	#list_filter = ('nombre',)
+
 
 class EnrollAdmin(admin.ModelAdmin):
 	pass
