@@ -26,8 +26,8 @@ class EmpresaAdmin(admin.ModelAdmin):
 
 
 class EnrollAdmin(admin.ModelAdmin):
-	pass
-
+	# despliega todos éstos campos en el Admin, antes de ver detalles de cada registro
+	list_display = ('usuario','enrollment_id', 'fecha_aprobacion',)
 
 class YascAdmin(admin.ModelAdmin):
 	# despliega todos éstos campos en el Admin, antes de ver detalles de cada registro

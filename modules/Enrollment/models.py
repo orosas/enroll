@@ -2,20 +2,25 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+# Create your models here.
+
+STATUS_EMPRESA = (
+	('AC','Activa'),
+	('BJ','Baja'),
+	)
+
 class Empresa(models.Model):
 	nombre = models.CharField(max_length=100, null=False, blank=False)
 	contacto = models.CharField(max_length=50, null=True, blank=True)
 	email = models.EmailField(max_length=50, null=True, blank=True)
 	telefono = models.CharField(max_length=50, null=True, blank=True)
+	status_empresa = models.CharField(choices=STATUS_EMPRESA, max_length=2)
 	fecha_modif = models.DateField(auto_now=True)
 	fecha_creacion = models.DateField(auto_now_add=True)
-	usuario = models.ForeignKey(User,related_name='eluser')
+	capturado_por_usuario = models.ForeignKey(User,on_delete=models.CASCADE)
 
 	def __str__(self):
 		return u"%s" % (self.nombre)
-
-
-# Create your models here.
 
 STATUS = (
 	('AC','Activo'),
@@ -55,7 +60,7 @@ class Usuario(models.Model):
 	nombres = models.CharField(max_length=50, null=False, blank=False)
 	apellido_paterno = models.CharField(max_length=50, null=False, blank=False)
 	apellido_materno = models.CharField(max_length=50, null=False, blank=False)
-	empresa = models.ForeignKey(Empresa, related_name='laempresa')
+	empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
 	status = models.CharField(choices=STATUS, max_length=2)
 	status_operaciones = models.CharField(choices=STATUS_OPERACIONES, max_length=2)
 	fecha_baja = models.DateField(null=True, blank=True)
@@ -68,11 +73,12 @@ class Usuario(models.Model):
 	cargo = models.CharField(choices=CARGO, max_length=2)
 	# Campo para guardar diversas actividades que ejecuta el usuario
 	# por ejemplo Civil Works, I&C, Decomisionamiento
-	actividades = models.TextField(null=False, blank=False)
+	# las opciones se definen en el form
+	actividades = models.TextField(null=True, blank=True)
 	fecha_liberado_ehs = models.DateField(null=True, blank=True)
 	u_fecha_modificacion = models.DateField(auto_now=True)
 	u_fecha_creacion = models.DateField(auto_now_add=True)
-	elusuario = models.ForeignKey(User, on_delete=models.CASCADE,)
+	capturado_por = models.ForeignKey(User, on_delete=models.CASCADE,)
 
 	def __str__(self):
 		return u"%s %s %s" % (self.nombres, self.apellido_paterno, self.apellido_materno)
@@ -85,6 +91,7 @@ class Enroll(models.Model):
 	fecha_aprobacion = models.DateField(null=True, blank=True)
 	fecha_modif = models.DateField(auto_now=True)
 	fecha_creacion = models.DateField(auto_now_add=True)
+	captura_por = models.ForeignKey(User, on_delete=models.CASCADE,)
 
 	def __str__(self):
 		return u"%s" % (self.acuse_att)
@@ -98,6 +105,7 @@ class Yasc(models.Model):
 	comentario = models.TextField(null=False, blank=False)
 	fecha_modificacion = models.DateField(auto_now=True)
 	fecha_creacion = models.DateField(auto_now_add=True)
+	capturado_por = models.ForeignKey(User, on_delete=models.CASCADE,)
 
 	def __str__(self):
 		return u"%s" % (self.imei)

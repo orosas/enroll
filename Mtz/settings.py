@@ -148,6 +148,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+# Omar: The absolute path to the directory where collectstatic will collect static files for deployment.
+# Omar: https://docs.djangoproject.com/en/1.11/ref/settings/#static-root
 STATIC_ROOT = os.path.join(os.getcwd(),'static')
 
 

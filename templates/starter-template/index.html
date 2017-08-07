@@ -42,86 +42,17 @@
 
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
-      <br><br>
+      <br>
       <h1 class="header center indigo-text text-darken-4">MasTec México</h1>
       <div class="row center">
-        <h5 class="header col s12 light">Sistema de Administración De Información</h5>
+        <h5 class="header col s12 indigo-text text-darken-4">Sistema de Administración De Enrollment</h5>
       </div>
 
     </div>
   </div>
 
 
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 l4">
-          <div class="icon-block">
-            <h2 class="center indigo-text text-darken-4"><i class="material-icons">group</i></h2>
-            <h5 class="center">Enrollment</h5>
-
-            <p class="light">
-              <div class="row center">
-                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light light-blue darken-1">Enrollment</a>
-              </div>
-            </p>
-
-          </div>
-        </div>
-
-        <div class="col s12 l4 center">
-          <div class="icon-block">
-            <h2 class="indigo-text text-darken-4"><i class="material-icons">navigation</i></h2>
-            <h5>Proyecto 2</h5>
-
-            <p class="light"><div class="row center">
-                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large disabled">Proyecto 2</a>
-              </div></p>
-          </div>
-        </div>
-
-        <div class="col s12 l4 center">
-          <div class="icon-block">
-            <h2 class="indigo-text text-darken-4"><i class="material-icons">place</i></h2>
-            <h5 >Proyecto 3</h5>
-
-            <p class="light">
-                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large disabled">Proyecto 3</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br><br>
-  </div>
-
-
-
-
-
-
-<!-- Inicia Sección de breadcrumb y login -->
-
-
-  <div class="container">
-
-      <!-- Breadcrumb -->
-      <nav>
-        <div class="nav-wrapper grey darken-2">
-          <div class="col s12">
-            <a href="#!" class="breadcrumb">Inicio</a>
-            <a href="#!" class="breadcrumb">Enrollment</a>
-            <a href="#!" class="breadcrumb">Alta</a>
-          </div>
-        </div>
-      </nav>
-      <!-- Termina Breadcrumb -->
-
-
-
-    <!--   Inicia Sección de Login   -->
+  <!--   Inicia Sección de Login   -->
     <div class="section">
       <!--   Icon Section   -->
       <div class="row">
@@ -130,14 +61,13 @@
         </div>
 
         <div class="col s12 m4">
-            <form class="col s12 card-panel hoverable grey lighten-3 esq_redonda">
+            <form class="col s12 card-panel hoverable esq_redonda">
 
               <div class="row">
-                <h5 class="indigo-text text-darken-4 center">Login</h5>
                 <div class="input-field col s12">
                   <i class="material-icons prefix">account_circle</i>
-                  <input placeholder="Email" id="email" type="email" class="validate">
-                  <label for="email">Email</label>
+                  <input placeholder="Usuario" id="usuario" type="text" class="validate">
+                  <label for="usuario">Usuario</label>
                 </div>
               </div>
               
@@ -160,9 +90,116 @@
 
       </div>
     </div>
-    <br><br>
   </div>
   <!-- Termina Sección de login -->
+
+
+
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 l4 center hoverable esq_redonda">
+          <div class="icon-block">
+            <h2 class="indigo-text text-darken-4">
+              <i class="material-icons">business</i></h2>
+              <h5 class="txt-bold indigo-text text-darken-4">Proveedores</h5>
+
+            <p class="light">
+              <div class="row">
+                <p>
+                  <a href="#" id="download-button" class="btn waves-effect waves-light light-blue darken-1"><i class="material-icons left">search</i>Alta</a>
+                </p>
+                 <p>
+                  <a href="#" id="download-button" class="btn waves-effect waves-light light-blue darken-1"><i class="material-icons left">search</i>Consulta</a>
+                </p>
+                <p>
+                  <a href="#" id="download-button" class="btn waves-effect waves-light red lighten-1"><i class="material-icons left">delete</i>Eliminar</a>
+                </p>
+
+              </div>
+            </p>
+
+          </div>
+        </div>
+
+        <!-- Inicia Sección de formulario de búsqueda -->
+        <div class="col s12 l4 center-align">
+
+              <!-- Inicia Acordeon -->
+              <ul class="collapsible" data-collapsible="expandanble">
+                <li>
+                  <div class="collapsible-header indigo darken-4 white-text active"><i class="material-icons">keyboard_arrow_down</i>Buscar Usuario o Empresa</div>
+                  <div class="collapsible-body">
+                    
+                      <form class="esq_redonda">
+                          <div class="input-field">
+                            <i class="material-icons prefix">search</i>
+                            <input id="icon_prefix" type="text" class="validate hoverable">
+                            <label for="icon_prefix">Búsqueda de Usuario o Empresa</label>
+
+                            <button class="btn waves-effect waves-light light-blue darken-1" type="submit" name="action">Buscar
+                              <i class="material-icons right">send</i>
+                            </button>
+                          </div>
+                      </form>
+
+                  </div>
+                </li>
+              </ul>
+              <!-- Termina Acordeon -->
+          </div>
+
+          <!-- Termina Sección de formulario de búsqueda -->
+
+
+        <div class="col s12 l4 center hoverable esq_redonda">
+          <div class="icon-block">
+            <h2 class="indigo-text text-darken-4"><i class="material-icons">group</i></h2>
+            <h5 class="txt-bold indigo-text text-darken-4">Usuarios</h5>
+
+            <p class="light">
+              <div class="row">
+                 <p>
+                  <a href="#" id="download-button" class="btn waves-effect waves-light light-blue darken-1"><i class="material-icons left">search</i>Alta</a>
+                </p>
+                 <p>
+                  <a href="#" id="download-button" class="btn waves-effect waves-light light-blue darken-1"><i class="material-icons left">search</i>Consulta</a>
+                </p>
+                <p>
+                  <a href="#" id="download-button" class="btn waves-effect waves-light red lighten-1"><i class="material-icons left">delete</i>Eliminar</a>
+                </p>
+              </div></p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <br><br>
+  </div>
+
+
+
+<!-- Inicia Sección de breadcrumb-->
+
+
+  <div class="container">
+
+      <!-- Breadcrumb -->
+      <nav>
+        <div class="nav-wrapper grey darken-4">
+          <div class="col s12">
+            <a href="#!" class="breadcrumb">Inicio</a>
+            <a href="#!" class="breadcrumb">Enrollment</a>
+            <a href="#!" class="breadcrumb">Alta</a>
+          </div>
+        </div>
+      </nav>
+      <!-- Termina Breadcrumb -->
 
 
 
@@ -275,27 +312,25 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h5 class="white-text">MasTec México</h5>
+          <p class="grey-text text-lighten-4">Sistema de Administración de información de Enrollment y Equipos de Protección Personal.</p>
 
 
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
+          <h5 class="white-text">Enrollment</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><a class="amber-text text-darken-3" href="#!">Alta de Empresa</a></li>
+            <li><a class="amber-text text-darken-3" href="#!">Alta de Usuario</a></li>
+            <li><a class="amber-text text-darken-3" href="#!">Baja de Usuario</a></li>
           </ul>
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
+          <h5 class="white-text">Programado Con</h5>
           <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
+            <li><a class="grey-text text-lighten-1" href="http://materializecss.com">Materializecss</a></li>
+            <li><a class="grey-text text-lighten-1" href="https://www.djangoproject.com/">Django</a></li>
+            <li><a class="grey-text text-lighten-1" href="https://www.python.org/">Python</a></li>
           </ul>
         </div>
       </div>
@@ -303,14 +338,11 @@
     <div class="footer-copyright">
       <div class="container">
         <div class="row">
-          <div class="col s4">
+          <div class="col s12">
             @Copyright MasTec México
           </div>
-          <div class="col s8">
-            Realizado con: 
-            <a class="orange-text text-lighten-3" href="http://materializecss.com">Materializecss</a> |
-            <a class="orange-text text-lighten-3" href="https://www.djangoproject.com/">Django</a> |
-            <a class="orange-text text-lighten-3" href="https://www.python.org/">Python</a>
+          <div class="col s12">
+            Omar Rosas
           </div>
         </div>  
       </div>
