@@ -45,7 +45,7 @@ body {
     padding-top: 3.5rem;
     background-color: #d0d0d0;
     /*background: linear-gradient(to top,#3C7CAC 0,#000 50%) no-repeat;*/
-    //text-align: center;
+    /* text-align: center; */
 }
 
 .navbar {
@@ -113,14 +113,26 @@ h1, h2, h3, .display-3 .arch-black {
         font-size: 2.85rem !important;
     }
     
+    h2 {
+        font-size: 1.70rem;
+    }
+    
     h3 {
         font-size: 1.45rem;
     }
     
+    h4 {
+        font-size: 1.00rem;
+    }
+    
+    .menuder h5 {
+        font-size: 1.05rem !important;
+    }
 }
 
 .contain-log {
     background-color: aquamarine;
+    /* text-align: center; */
 }
 
 .container-prov {
@@ -147,4 +159,28 @@ h1, h2, h3, .display-3 .arch-black {
      /* margin-top: -2.3rem;  */
     /*margin: 0rem 0rem 0rem 0rem; */
 }
+
+/********************************/
+/* Menu derecho */
+.menuder {
+    padding: 20px 20px;
+    background-color: #f0f0f0;
+    
+    
+}
+
+.menuder p {
+    margin-bottom: 0.3rem;
+}
+
+.menuder h5 {
+    /* font-size: 1.10rem; */
+    font-family: 'Passion One', cursive;
+}
+/* Termina Menu derecho */
+/********************************/
+/********************************/
+
+
+
 

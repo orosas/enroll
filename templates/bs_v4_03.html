@@ -368,8 +368,6 @@
             </div>
           </div>
 
-
-
         
         </div> <!-- Termina row de Búsqueda con Cards -->
 
@@ -387,36 +385,33 @@
                     <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
                     <label for="inputPassword" class="sr-only">Password</label>
                     <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
-
                     <button class="btn btn-lg btn-primary btn-block mt-2" type="submit"><i class="material-icons md-18 md-white prefix">lock</i> Login</button>
                   </form>
+                    <div class="form-check mb-2 mb-sm-0">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox"> No cerrar sesión
+                      </label>
+                    </div>
                     <p class="pt-2">Recuperar contraseña.</p>
             </div>
         </div>
 
         <div class="container contain-log py-3">
+          <h2 class="form-signin-heading">Buscar Empresa o Usuario</h2>
           <form>
             <div class="form-row align-items-center">
               <div class="col-auto">
-                <label class="sr-only" for="inlineFormInput">Name</label>
-                <input type="text" class="form-control mb-2 mb-sm-0" id="inlineFormInput" placeholder="Jane Doe">
-              </div>
-              <div class="col-auto">
-                <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                
                 <div class="input-group mb-2 mb-sm-0">
-                  <div class="input-group-addon">@</div>
-                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                  <div class="input-group-addon"><i class="material-icons md-18 md-white prefix">search</i></div>
+                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Buscar Usuario o Empresa">
                 </div>
               </div>
               <div class="col-auto">
-                <div class="form-check mb-2 mb-sm-0">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox"> Remember me
-                  </label>
-                </div>
+
               </div>
               <div class="col-auto">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Buscar</button>
               </div>
             </div>
           </form>
@@ -424,6 +419,45 @@
 
     </div> <!-- Termina form de búsqueda de empresa o usuario -->
 
+
+
+    <div class="container contain-main py-3">
+        <div class="row">
+            <div class="col-4">
+                Col 4
+                Donde irá el Menú de Búsqueda y otras acciones
+                <h3>ENROLLMENT</h3>
+                <h3>EMPRESAS</h3>
+                <h3>USUARIOS</h3>
+            </div>
+            <div class="col-8">
+                col 8
+                <div class="container contain-log py-3">
+                  <h2 class="form-signin-heading">Buscar Empresa o Usuario</h2>
+                  <form>
+                    <div class="form-row align-items-center">
+                      <div class="col-auto">
+
+                        <div class="input-group mb-2 mb-sm-0">
+                          <div class="input-group-addon"><i class="material-icons md-18 md-white prefix">search</i></div>
+                          <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Buscar Usuario o Empresa">
+                        </div>
+                      </div>
+                      <div class="col-auto">
+
+                      </div>
+                      <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+        
 
 
     <footer class="footer ">

@@ -62,15 +62,15 @@ class Usuario(models.Model):
 	apellido_materno = models.CharField(max_length=50, null=False, blank=False)
 	empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
 	status = models.CharField(choices=STATUS, max_length=2)
-	status_operaciones = models.CharField(choices=STATUS_OPERACIONES, max_length=2)
+	status_operaciones = models.CharField(choices=STATUS_OPERACIONES, max_length=2, null=True, blank=True)
 	fecha_baja = models.DateField(null=True, blank=True)
-	observaciones = models.TextField(null=False, blank=False)
-	email = models.EmailField(max_length=100, null=False, blank=False)
-	telefono = models.CharField(max_length=200, null=False, blank=False)
-	num_imss = models.CharField(max_length=11, null=False, blank=False)
-	curp = models.CharField(max_length=18, null= False, blank=False)
-	direccion = models.TextField(null=False, blank=False)
-	cargo = models.CharField(choices=CARGO, max_length=2)
+	observaciones = models.TextField(null=True, blank=True)
+	email = models.EmailField(max_length=100, null=True, blank=True)
+	telefono = models.CharField(max_length=200, null=True, blank=True)
+	num_imss = models.CharField(max_length=11, null=True, blank=True)
+	curp = models.CharField(max_length=18, null=True, blank=True)
+	direccion = models.TextField(null=True, blank=True)
+	cargo = models.CharField(choices=CARGO, max_length=2, null=True, blank=True)
 	# Campo para guardar diversas actividades que ejecuta el usuario
 	# por ejemplo Civil Works, I&C, Decomisionamiento
 	# las opciones se definen en el form

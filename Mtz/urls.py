@@ -18,7 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('modules.Enrollment.urls', namespace='Enrollment', app_name='Enrollment'), name="Enrollment"),
+    url(r'^enrollment/', include('modules.Enrollment.urls', namespace='Enrollment', app_name='Enrollment'), name="Enrollment"),
 ]
 
 # Cambia el Título en Django Admin

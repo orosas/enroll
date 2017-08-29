@@ -1,0 +1,99 @@
+{% extends 'Enrollment/base.html' %}
+
+    {% block jumbotron %}{% endblock  %}
+      
+    {% block body %}
+            {% if elerror %}
+              <div class="alert alert-danger" role="alert">
+                <strong>Error: </strong> No existe Usuario con el criterio de búsqueda.
+              </div>
+            {% endif %}
+
+
+          <div class="container contain-main py-1">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="container contain-log py-3">
+
+                      <h2 class="form-signin-heading">Buscar Empresa o Usuario</h2>
+                      <form method="post" action="{% url 'Enrollment:busqueda' %}">
+                        <div class="form-row align-items-center">
+                          <div class="col-auto">
+
+                            <div class="input-group mb-2 mb-sm-0">
+                              <div class="input-group-addon"><i class="material-icons md-18 md-white prefix">search</i>
+                                </div>
+                              {% csrf_token %}
+                              {{ form.q }}
+                            </div>
+                          </div>
+                          <div class="col-auto">
+
+                          </div>
+                          <div class="col-auto">
+                            <button type="submit" class="btn btn-primary">Buscar</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    
+                    <!-- Inicia container MAIN -->
+                    <div class="container container-main">
+
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="card mt-4 ">
+                                  <h3 class="card-header">Empresas</h3>
+                                  <div class="card-body">
+                                    <p class="card-text">Con Enrollment: 25</p>
+                                    <p class="card-text">Activas: 10</p>
+                                    <p class="card-text">Canceladas: 15</p>
+                                    <a href="#" class="btn btn-primary disabled">Ingresar</a>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card mt-4 ">
+                                  <h3 class="card-header">Usuarios</h3>
+                                  <div class="card-body">
+                                    <p class="card-text">Con Enrollment: 320</p>
+                                    <p class="card-text">Activos: 300</p>
+                                    <p class="card-text">Bajas: 10</p>
+                                    <p class="card-text">En Proceso: 10</p>
+                                    <a href="#" class="btn btn-primary">Ingresar</a>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> <!-- Termina container MAIN -->
+                    
+                    
+                    
+                </div>
+                
+                
+                
+                <!-- Inicia container menu derecha -->
+                <div class="col-12 menuder col-md-3">
+                    <div class="row">
+                        <div class="col-12 col-md-8">
+                            <h5>ALTAS ENROLLMENT</h5>
+                                <p><a href="#" class="badge badge-primary">Alta Empresa</a></p>
+                                <p><a href="#" class="badge badge-primary">Alta Usuario</a></p>
+                            <h5>BAJAS ENROLLMENT</h5>
+                                <p><a href="#" class="badge badge-danger">Eliminar Empresa</a></p>
+                                <p><a href="#" class="badge badge-danger">Eliminar Usuario</a></p>
+                            <h5>BUSCAR EMPRESAS</h5>
+                                <p><a href="#" class="badge badge-primary">Buscar Empresa</a></p>
+                        </div>
+                        <div class="col-12 col-md-4">
+                        </div>
+                    </div>
+                </div> <!-- Termina container menu derecha -->
+                
+            </div>
+        </div>
+    {% endblock  %}

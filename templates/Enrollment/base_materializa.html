@@ -1,0 +1,117 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <link rel="icon" href="{% static 'Enrollment/images/favicon.ico' %}">
+
+
+
+  <title>{% block 'title' %}{%endblock%}MasTec México</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static "Enrollment/css/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static "Enrollment/css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+
+
+  <!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">one</a></li>
+  <li><a href="#!">two</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">three</a></li>
+</ul>
+
+  <nav class="grey darken-4">
+    <div class="nav-wrapper container">
+      <a href="{% url "Enrollment:index" %}" class="brand-logo">MasTec México</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url "Enrollment:login" %}">Login/Logout</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="{% url "Enrollment:login" %}">Login/Logout</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br>
+      <h1 class="header center indigo-text text-darken-4">MasTec México</h1>
+      <div class="row center">
+        <h5 class="header col s12 indigo-text text-darken-4">Sistema de Administración De Enrollment</h5>
+      </div>
+
+    </div>
+  </div>
+
+  {%block 'content' %}
+  {% endblock %}
+
+  
+
+
+
+  <footer class="page-footer grey darken-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">MasTec México</h5>
+          <p class="grey-text text-lighten-4">Sistema de Administración de información de Enrollment y Equipos de Protección Personal.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Enrollment</h5>
+          <ul>
+            <li><a class="amber-text text-darken-3" href="#!">Alta de Empresa</a></li>
+            <li><a class="amber-text text-darken-3" href="#!">Alta de Usuario</a></li>
+            <li><a class="amber-text text-darken-3" href="#!">Baja de Usuario</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Hecho Con:</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-1" href="http://materializecss.com">Materializecss</a></li>
+            <li><a class="grey-text text-lighten-1" href="https://www.djangoproject.com/">Django</a></li>
+            <li><a class="grey-text text-lighten-1" href="https://www.python.org/">Python</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            @Copyright MasTec México
+          </div>
+          <div class="col s12">
+            Omar Rosas
+          </div>
+        </div>  
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static "Enrollment/js/materialize.js" %}"></script>
+  <script src="{% static "Enrollment/js/init.js" %}"></script>
+  <script type="text/javascript">
+    $( document ).ready(function(){
+          $(".button-collapse").sideNav();
+      });
+  </script>
+  
+
+  </body>
+</html>

@@ -1,11 +1,17 @@
 from django.shortcuts import render
+
+from .models import Usuario, Empresa
+from django.db.models import Q
+
+from .forms import BusquedaForm
 #from django.http import HttpResponse
 
 # Create your views here.
 def Index(request):
 	#return HttpResponse('Dentro de función Index')
 	if request.user.is_authenticated():
-		return render(request, 'Enrollment/base.html',)
+		form = BusquedaForm()
+		return render(request, 'Enrollment/index.html', {'form': form})
 	else:
 		return render(request, 'Enrollment/login.html',)
 
@@ -13,6 +19,49 @@ def Login(request):
 	#return HttpResponse('Dentro de función Index')
 	return render(request, 'Enrollment/login.html',)
 
+
+# Recibe string desde formulario para buscar
+# Usuario o usuarios de una empresa
+# regresa resultados a template res_busqueda_usuario.html
+def Busqueda(request):
+
+
+	if request.method == 'POST':
+		print("Dentro de request.method: **************")
+		form = BusquedaForm(request.POST)
+		error_res_q = False
+
+		if form.is_valid():
+			print("************* Dentro de form.is_valid")
+			q = form.cleaned_data['q']
+
+			#Todo Pendiente buscar también en campo de empresa
+			print("El q: " + q)
+			res_q_usuario = Usuario.objects.filter(Q(nombres__unaccent__icontains=q)|
+															Q(apellido_paterno__unaccent__icontains=q)|
+															Q(apellido_materno__unaccent__icontains=q)
+												)
+
+			if not res_q_usuario:
+				print("Hay error en la búsqueda. ¡¡¡¡¡¡¡¡¡")
+				error_res_q = True
+
+				return render(request, 'Enrollment/res_busqueda_usuario.html', {'form': form, 'elerror': error_res_q})
+
+			#print("antes de for resultado in: 222222222222222222")
+			#print(res_q_usuario)
+			print("<<<<< res_q_usuario.count: " + str(res_q_usuario.count()))
+			cant_resultados = res_q_usuario.count()
+			for resultado in res_q_usuario:
+				print(" <<<<<<<<<< dentro de for que no se ve >>>>>>>>>>>>><")
+				print("Usuario PK: " + str(resultado.pk))
+				print("Usuario empresa: " + str(resultado.empresa))
+
+	return render(request, 'Enrollment/res_busqueda_usuario.html', {'form': form, 
+														'elerror': error_res_q, 
+														'cant_resultados': cant_resultados,
+														'q':q,}
+				)
 
 '''
 	ToDo:
@@ -58,8 +107,4 @@ def Login(request):
 		        for chunk in f.chunks():
 		            destination.write(chunk)
 *************************************************************************
-
-
-
-
 '''
