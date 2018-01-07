@@ -1,0 +1,186 @@
+
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+/*
+body {
+  padding-top: 3.5rem;
+    background-color: #E8DDCB;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #031634;
+}
+
+.jumbotron {
+    background-color: #033649;
+    color: #fff; 
+}
+
+*/
+
+
+
+/*
+body {
+  padding-top: 3.5rem;
+    background-color: #EAFDE6;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #1B676B;
+}
+
+.jumbotron {
+    background-color: #033649;
+    color: #fff; 
+    
+}
+*/
+
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+    padding-top: 3.5rem;
+    background-color: #d0d0d0;
+    /*background: linear-gradient(to top,#3C7CAC 0,#000 50%) no-repeat;*/
+    /* text-align: center; */
+}
+
+.navbar {
+    background-color: #07093D;
+}
+
+.jumbotron {
+    background-color: #0C0F66;
+    color: #fff;
+    text-align: center;
+    /* padding-bottom: 80px; */
+    
+}
+
+.jumbotron h1{
+    font-family: 'Archivo Black', sans-serif;
+}
+
+/*
+.material-icons.md-48 { font-size: 60px; 
+
+}*/
+
+.material-icons.md-azul { 
+    color: #265a88; 
+    font-size: 48px; 
+    
+}
+
+.col-omar {
+    background-color: #e2e2e2;
+    border: 1px;
+}
+
+.col-omar:hover {
+    background-color: #f0f0f0;
+    border: 2px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 6px 0 rgba(42, 42, 42, 0.5);
+}
+
+.card:hover {
+    /*border-radius: 15px; */
+    box-shadow: 2px 4px 6px 0 rgba(42, 42, 42, 0.5);
+}
+
+h1, h2, h3, .display-3 .arch-black {
+    /* color: #ffb676; */
+    font-family: 'Passion One', cursive;
+}
+
+.container-main {
+    padding-bottom: 3.2rem;
+}
+
+.row-foot {
+    background: linear-gradient(to right,#3C7CAC 0,#000 70%) no-repeat;
+    color: #fff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+@media (max-width: 575px) { 
+    h1 {
+        font-size: 2.85rem !important;
+    }
+    
+    h2 {
+        font-size: 1.70rem;
+    }
+    
+    h3 {
+        font-size: 1.45rem;
+    }
+    
+    h4 {
+        font-size: 1.00rem;
+    }
+    
+    .menuder h5 {
+        font-size: 1.05rem !important;
+    }
+}
+
+.contain-log {
+    background-color: aquamarine;
+    /* text-align: center; */
+}
+
+.container-prov {
+    background-color: #454857;
+}
+
+.container-tabla h3 a {
+    color: #265a88;
+}
+
+.container-tabla p {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.container-tabla .material-icons { 
+    /* color: #265a88; */
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+.container-tabla .titulo-card { 
+     /* background-color: cyan; */
+     /* margin-top: -2.3rem;  */
+    /*margin: 0rem 0rem 0rem 0rem; */
+}
+
+/********************************/
+/* Menu derecho */
+.menuder {
+    padding: 20px 20px;
+    background-color: #f0f0f0;
+    
+    
+}
+
+.menuder p {
+    margin-bottom: 0.3rem;
+}
+
+.menuder h5 {
+    /* font-size: 1.10rem; */
+    font-family: 'Passion One', cursive;
+}
+/* Termina Menu derecho */
+/********************************/
+/********************************/
+
+
+
+

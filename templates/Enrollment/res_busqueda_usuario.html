@@ -1,7 +1,7 @@
 {% extends 'Enrollment/base.html' %}
 
     {% block jumbotron %}{% endblock  %}
-      
+
     {% block body %}
 
           <div class="container contain-main py-1">
@@ -9,7 +9,7 @@
                 <div class="col-12 col-md-8">
                     <div class="container contain-log py-3">
 
-                      <h2 class="form-signin-heading">Buscar Empresa o Usuario</h2>
+                      <h2 class="form-signin-heading">Buscar Usuario En Base Enrollment</h2>
                       <form method="post" action="{% url 'Enrollment:busqueda' %}">
                         <div class="form-row align-items-center">
                           <div class="col-auto">
@@ -30,90 +30,184 @@
                         </div>
                       </form>
                     </div>
-                    
+
                     <!-- Inicia container MAIN -->
                     <div class="container container-main">
 
                         <div class="row">
-                            
+
                             <div class="col-12">
                                 <h3 class="h3">Resultados De Búsqueda: {{ cant_resultados }}, del string: {{ q }}</h3>
                                     {% if elerror %}
                                       <div class="alert alert-danger" role="alert">
-                                        <strong>Error: </strong> No existe Usuario con el criterio de búsqueda.
+                                        <strong>Error: </strong> No existe Usuario con el criterio de búsqueda: <b>{{ q }}</b>.
                                       </div>
                                     {% endif %}
+                                
                             </div>
                             
-                            <div class="col-sm-6">
-            
-                                <div class="card mt-2">
-                                    <h3 class="card-header"><a href="#">Jorge Omar Rosas Cedillo</a></h3>
-                                  <div class="card-body">
+                                                        
+                            
+                            {% if usuarios %}
+                                    <div class="card-group mt-2">
+                                      <div class="card">
+                                          <h4 class="card-header"><a href="#">1 FABIAN ALEJANDRO OLAN LEON</a></h4>
+                                        <div class="card-body">
+                                            
+                                            
+                                                <p class="card-text"><strong>Proveedor:</strong> {{ usuario.empresa }} </p>
+                                                <p class="card-text">
+                                                        <strong>Enrollment: </strong>
+                                                        <span class="badge badge-pill badge-danger">Baja</span>
+                                                        <span class="badge badge-pill badge-success">Activo</span>
+                                                        <span class="badge badge-pill badge-secondary">En Proceso</span>
+                                                </p>
+                                                <p class="card-text"><strong>ID Enrollment: </strong>zzzzzzz</p>
+                                                <p class="card-text"><strong>Status: </strong>
+                                                    <span class="badge badge-pill badge-danger">Baja</span>
+                                                    <span class="badge badge-pill badge-success">Activo</span>
+                                                    <span class="badge badge-pill badge-warning">Suspendido</span>
+                                                </p>
+                                            
+                                            
+                                        <div>
+                                          <a href="#" class="btn btn-outline-info btn-sm btn-block"><i class="material-icons bg-azul">assignment_ind</i> Ver Perfil Completo</a>
+                                            <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="material-icons bg-azul">mode_edit</i>Editar usuario</button>
+                                          <button type="button" class="btn btn-outline-danger btn-sm btn-block"><i class="material-icons">delete_forever</i>Eliminar usuario</button>  
+                                        </div>
+                                            
+                                            
+                                            
+                                        </div>
+                                      </div>
+                                      <div class="card">
+                                          <h4 class="card-header"><a href="#">2 FABIAN ALEJANDRO OLAN LEON</a></h4>
+                                        <div class="card-body">
+                                                <p class="card-text"><strong>Proveedor:</strong> {{ usuario.empresa }} </p>
+                                                <p class="card-text">
+                                                        <strong>Enrollment: </strong>
+                                                        <span class="badge badge-pill badge-danger">Baja</span>
+                                                        <span class="badge badge-pill badge-success">Activo</span>
+                                                        <span class="badge badge-pill badge-secondary">En Proceso</span>
+                                                </p>
+                                                <p class="card-text"><strong>ID Enrollment: </strong>zzzzzzz</p>
+                                                <p class="card-text"><strong>Status: </strong>
+                                                    <span class="badge badge-pill badge-danger">Baja</span>
+                                                    <span class="badge badge-pill badge-success">Activo</span>
+                                                    <span class="badge badge-pill badge-warning">Suspendido</span>
+                                                </p>
+                                            
+                                            
+                                        <div>
+                                          <a href="#" class="btn btn-outline-info btn-sm btn-block"><i class="material-icons bg-azul">assignment_ind</i> Ver Perfil Completo</a>
+                                            <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="material-icons bg-azul">mode_edit</i>Editar usuario</button>
+                                          <button type="button" class="btn btn-outline-danger btn-sm btn-block disabled"><i class="material-icons">delete_forever</i>Eliminar usuario</button>  
+                                        </div>
+                                            
+                                            
+                                        </div> <!-- /"card-body" -->
+                                      </div> <!-- /"card" -->
+                                        
+                                      <div class="card">
+                                        <h4 class="card-header">3 ANTONIO JONATHAN CHIQUINI PEREZ</h4>
+                                        <div class="card-body">
+                                                <p class="card-text"><strong>Proveedor:</strong> {{ usuario.empresa }} </p>
+                                                <p class="card-text">
+                                                        <strong>Enrollment: </strong>
+                                                        <span class="badge badge-pill badge-danger">Baja</span>
+                                                        <span class="badge badge-pill badge-success">Activo</span>
+                                                        <span class="badge badge-pill badge-secondary">En Proceso</span>
+                                                </p>
+                                                <p class="card-text"><strong>ID Enrollment: </strong>zzzzzzz</p>
+                                                <p class="card-text"><strong>Status: </strong>
+                                                    <span class="badge badge-pill badge-danger">Baja</span>
+                                                    <span class="badge badge-pill badge-success">Activo</span>
+                                                    <span class="badge badge-pill badge-warning">Suspendido</span>
+                                                </p>
+                                            
+                                            
+                                        <div>
+                                          <a href="#" class="btn btn-outline-info btn-sm btn-block"><i class="material-icons bg-azul">assignment_ind</i> Ver Perfil Completo</a>
+                                            <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="material-icons bg-azul">mode_edit</i>Editar usuario</button>
+                                          <button type="button" class="btn btn-outline-danger btn-sm btn-block disabled"><i class="material-icons">delete_forever</i>Eliminar usuario</button>  
+                                        </div>
+                                            
+                                            
+                                        </div> <!-- /"card-body" -->
+                                      </div> <!-- /"card" -->
+                                                                                
+                                    </div> <!-- /"card-group" -->
+                            
+                            
+                            
+                                      <div class="card w-100 mt-2">
+                                          <h4 class="card-header">3 ANTONIO JONATHAN CHIQUINI PEREZ</h4>
+                                        <div class="card-body">
+                                                <p class="card-text"><strong>Proveedor:</strong> {{ usuario.empresa }} </p>
+                                                <p class="card-text">
+                                                        <strong>Enrollment: </strong>
+                                                        <span class="badge badge-pill badge-danger">Baja</span>
+                                                        <span class="badge badge-pill badge-success">Activo</span>
+                                                        <span class="badge badge-pill badge-secondary">En Proceso</span>
+                                                </p>
+                                                <p class="card-text"><strong>ID Enrollment: </strong>zzzzzzz</p>
+                                                <p class="card-text"><strong>Status: </strong>
+                                                    <span class="badge badge-pill badge-danger">Baja</span>
+                                                    <span class="badge badge-pill badge-success">Activo</span>
+                                                    <span class="badge badge-pill badge-warning">Suspendido</span>
+                                                </p>
+                                            
+                                            
+                                        <div>
+                                          <a href="#" class="btn btn-outline-info btn-sm btn-block"><i class="material-icons bg-azul">assignment_ind</i> Ver Perfil Completo</a>
+                                            <button type="button" class="btn btn-outline-info btn-sm btn-block"><i class="material-icons bg-azul">mode_edit</i>Editar usuario</button>
+                                          <button type="button" class="btn btn-outline-danger btn-sm btn-block"><i class="material-icons">delete_forever</i>Eliminar usuario</button>  
+                                        </div>
+                                        </div> <!-- /"card-body" -->
+                                      </div> <!-- /"card" -->
+                            
+                            
+                        
+                                {% for usuario in usuarios %}
 
-                                    <div class="row">
-                                        <div class="col-12 col-sm-6 mt-1">
+                                {% endfor %}
+                            
+                            {% endif %}
+                            
+                            
+                            
+                                    {% for usuario in usuarios %}
+                            
+                            
+                            
+                            
+                            
+                                        <div class="col-sm-6">
+
+                                <div class="card mt-2">
+                                    
+                                  <div class="card-body">
+                                      <h3 class="card-title"><a href="#">{{ forloop.counter }} {{ usuario.nombres }} {{ usuario.apellido_paterno }} {{ usuario.apellido_materno }}</a></h3>
+
+                                    <div class="row mt-1">
+                                        <div class="col-12 col-sm-6">
                                             <p class="card-text"><strong>Enrollment: </strong>
                                                 <span class="badge badge-pill badge-danger">Baja</span>
                                                 <span class="badge badge-pill badge-success">Activo</span>
                                                 <span class="badge badge-pill badge-secondary">En Proceso</span>
+
                                             </p>
-                                          <p class="card-text"><strong>Proveedor:</strong> MasTec</p>
-                                          <p class="card-text"><strong>ID Enrollment: </strong>21159</p>
+                                          <p class="card-text"><strong>Proveedor:</strong> {{ usuario.empresa }} </p>
+                                          <p class="card-text"><strong>ID Enrollment: </strong>{{ usuario.enroll.enrollment_id }}</p>
                                         </div>
 
-                                        <div class="col-12 col-sm-6 mt-1">
+                                        <div class="col-12 col-sm-6">
                                             <p class="card-text"><strong>Estatus: </strong>
                                                 <span class="badge badge-pill badge-danger">Baja</span>
                                                 <span class="badge badge-pill badge-success">Activo</span>
                                                 <span class="badge badge-pill badge-secondary">En Proceso</span>
                                             </p>
-                                            <p class="card-text"><strong>Proveedor:</strong> MasTec.</p>
-                                            <p class="card-text"><strong>Yasc: </strong>MTZ01226</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-2">
-                                        <div class="col text-center">
-                                          <a href="#" class="btn btn-primary btn-sm"><i class="material-icons bg-azul">assignment_ind</i></a>
-                                        </div>
-                                        <div class="col text-center">
-                                          <button type="button" class="btn btn-primary btn-sm"><i class="material-icons bg-azul">mode_edit</i></button>
-                                        </div>
-                                        <div class="col text-center">
-                                          <button type="button" class="btn btn-outline-danger btn-sm"><i class="material-icons">delete_forever</i></button>
-                                        </div>
-                                    </div>
-
-                                  </div>
-                                </div>
-                              </div>
-                            
-                            <div class="col-sm-6">
-            
-                                <div class="card mt-2">
-                                    <h3 class="card-header"><a href="#">Juan Pablo Flores Del Campo Martínez</a></h3>
-                                  <div class="card-body">
-
-
-                                    <div class="row">
-                                        <div class="col-12 col-sm-6 mt-1">
-                                          <p class="card-text"><strong>Enrollment: </strong>
-                                              <span class="badge badge-pill badge-danger">Baja</span>
-                                              <span class="badge badge-pill badge-success">Activo</span>
-                                              <span class="badge badge-pill badge-secondary">En Proceso</span>
-                                            </p>
-                                          <p class="card-text"><strong>Proveedor:</strong> MasTec</p>
-                                          <p class="card-text"><strong>ID Enrollment: </strong>21159</p>
-                                        </div>
-
-                                        <div class="col-12 col-sm-6 mt-1">
-                                            <p class="card-text"><strong>Estatus: </strong>
-                                                <span class="badge badge-pill badge-danger">Baja</span>
-                                                <span class="badge badge-pill badge-success">Activo</span>
-                                                <span class="badge badge-pill badge-secondary">En Proceso</span>
-                                            </p>
-                                            <p class="card-text"><strong>Proveedor:</strong> MasTec.</p>
+                                            <p class="card-text"><strong>Proveedor:</strong> {{ usuario.empresa }} </p>
                                             <p class="card-text"><strong>Yasc: </strong>MTZ01226</p>
                                         </div>
                                     </div>
@@ -135,35 +229,43 @@
                               </div>
                             
                             
-                        
+                            
+
+
+                            
+                                    {% endfor %}
+
+                            
+                            
+                            
                         </div>
 
                     </div> <!-- Termina container MAIN -->
-                    
-                    
-                    
+
+
+
                 </div>
-                
-                
-                
+
+
+
                 <!-- Inicia container menu derecha -->
                 <div class="col-12 menuder col-md-3">
                     <div class="row">
                         <div class="col-12 col-md-8">
                             <h5>ALTAS ENROLLMENT</h5>
-                                <p><a href="#" class="badge badge-primary">Alta Empresa</a></p>
-                                <p><a href="#" class="badge badge-primary">Alta Usuario</a></p>
+                                <p><a href="#" class="black">Alta Empresa</a></p>
+                                <p><a href="#">Alta Usuario</a></p>
                             <h5>BAJAS ENROLLMENT</h5>
-                                <p><a href="#" class="badge badge-danger">Eliminar Empresa</a></p>
-                                <p><a href="#" class="badge badge-danger">Eliminar Usuario</a></p>
+                                <p><a href="#">Eliminar Empresa</a></p>
+                                <p><a href="#">Eliminar Usuario</a></p>
                             <h5>BUSCAR EMPRESAS</h5>
-                                <p><a href="#" class="badge badge-primary">Buscar Empresa</a></p>
+                                <p><a href="#">Buscar Empresa</a></p>
                         </div>
                         <div class="col-12 col-md-4">
                         </div>
                     </div>
                 </div> <!-- Termina container menu derecha -->
-                
+
             </div>
         </div>
     {% endblock  %}
